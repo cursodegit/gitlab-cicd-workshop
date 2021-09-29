@@ -8,8 +8,8 @@ Los _runners_ se pueden configurar para que sean utilizados por:
 
 * Todos los proyectos (_shared runner_): Ir a _Overview -> Runners_
 * Un grupo de proyectos (_group runner_): Ir a _Settings -> CI/CD -> Runners_ en el menú del grupo
-* Por un único proyecto (_project-specifig runner_): Ir a _Settings -> CI/CD -> Runners_ en el menú del proyecto
-* Ver [The scope of runners (GitLab docs](https://docs.gitlab.com/ee/ci/runners/runners_scope.html)
+* Por un único proyecto (_project-specific runner_): Ir a _Settings -> CI/CD -> Runners_ en el menú del proyecto
+* Ver [The scope of runners (GitLab docs)](https://docs.gitlab.com/ee/ci/runners/runners_scope.html)
 
 En este laboratorio, daremos de alta un _runner_ que será utilizado por un proyecto de ejemplo que crearemos en 
 el siguiente paso.
@@ -24,7 +24,7 @@ Puedes hacerlo público o privado, para este ejemplo será irrelevante la opció
 que el repositorio no esté vacío, marcaremos la opción para que cree un fichero `README.md`.
 
 También puedes crear un [grupo](https://docs.gitlab.com/ee/user/group/) llamado `laboratorios` dentro de cuenta 
-y crear el respositorio dentro de este grupo. Esta es una manera muy práctica de mantener tus respositorio
+y crear el repositorio dentro de este grupo. Esta es una manera muy práctica de mantener tus repositorios
 ordenados.
 
 ## Obtener el token
