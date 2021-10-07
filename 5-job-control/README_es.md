@@ -7,7 +7,7 @@ Para ello, podemos utlizar las siguientes instrucciones dentro de la definición
 * [`rules`](https://docs.gitlab.com/ee/ci/yaml/index.html#rules)
 * [`only`](https://docs.gitlab.com/ee/ci/yaml/index.html#only--except)
 * [`except`](https://docs.gitlab.com/ee/ci/yaml/index.html#only--except)
-
+* [`when`]
 ## Condicionales usando  `when`
 
 Podemos añadir la clave `when` a un trabajo para seleccionar cuándo ejecutarlo.
