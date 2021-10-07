@@ -6,3 +6,4 @@
 1. [Ejecutar un _pipeline_](./4-run-a-simple-pipeline/README_es.md)
 1. [Cuándo ejecutar un trabajo](./5-job-control/README_es.md)
 1. [Variables](./6-variables/README_es.md)
+1. [Artefactos](./7-artifacts/README_es.md)
