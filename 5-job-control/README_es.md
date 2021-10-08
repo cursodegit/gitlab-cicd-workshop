@@ -181,7 +181,7 @@ Construir y ejecutar imagen de docker:
 * Crear un fichero `Dockerfile` con el siguiente contenido:
 
 ```Dockerfile
-FROM ubuntu:lastest
+FROM ubuntu:latest
 CMD ["echo","Hola desde docker!!!"]
 ```
 * Hacer commit de ambos ficheros y hacer push de la rama:
@@ -219,7 +219,7 @@ Construir y ejecutar imagen de docker:
 * Modificar el fichero `Dockerfile`:
 
 ```Dockerfile
-FROM ubuntu:lastest
+FROM ubuntu:latest
 VOLUME /app
 CMD ["echo","Hola desde docker!!!"]
 ```
