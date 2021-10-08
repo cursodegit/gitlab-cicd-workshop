@@ -257,8 +257,40 @@ workflow:
 * Hacer commit con el siguiente mensaje: `Probando el uso de DRAFT`
 * Ir a la página de _pipelines_ en GitLab y verificar que no se ejecuta
 
+## Evitar duplicación
+
+Hay eventos que, en función de la configuración de reglas de los trabajos, pueden dar lugar a que los pipelines se ejecuten por duplicado.
+
+Por ejemplo:
+
+```yaml
+job:
+  script: echo "This job creates double pipelines!"
+  rules:
+    - if: '$CUSTOM_VARIABLE == "false"'
+      when: never
+    - when: always
+```
+
+En este caso, si hacemos push a un _Merge request_ que está abierto, se ejecutarán dos pipelines, una por cada evento.
+
+La solución en este caso puede ser:
+* Usar la clave `workflow` para decidir qué tipo de pipeline vamos a ejecutar
+* Cambiar las reglas para que sólo se ejecute el pipeline en un merge request:
+
+```yaml
+job:
+  script: echo "This job does NOT create double pipelines!"
+  rules:
+    - if: '$CUSTOM_VARIABLE == "true" && $CI_PIPELINE_SOURCE == "merge_request_event"'
+```
+
+Podéis encontrar más ejemplos e información en la documentación de GitLab, que tiene una
+[sección específica](https://docs.gitlab.com/ee/ci/jobs/job_control.html#avoid-duplicate-pipelines) sobre este tema.
+
 ## Documentación:
 
 - [Job Control (GitLab Docs)](https://docs.gitlab.com/ee/ci/jobs/job_control.html)
 - [Predefined variables reference (GitLab docs)](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
 - [Keyword reference for the .gitlab-ci.yml file (GitLab docs)](https://docs.gitlab.com/ee/ci/yaml/index.html)
+- [Avoid duplicate pipelines (GitLab docs)](https://docs.gitlab.com/ee/ci/jobs/job_control.html#avoid-duplicate-pipelines)
